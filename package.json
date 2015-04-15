@@ -1,0 +1,20 @@
+{
+  "name": "BlackBelt",
+  "version": "1.0.0",
+  "description": "My MEAN STACK BLACK BELT EXAM",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.12.2",
+    "ejs": "^1.0.0",
+    "express": "^4.8.7",
+    "express-session": "^1.7.6",
+    "mongoose": "^4.0.1",
+    "socket.io": "latest"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "SIMI TRESA ANTONY",
+  "license": "ISC"
+}

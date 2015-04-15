@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myAppModule">
+<head>
+	<meta charset="UTF-8">
+	<title>Home</title>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+	<!--In AngularJS 1.2.0 and later, ngRoute has been moved to its own module. If you are getting this error after upgrading to 1.2.x or later, be sure that you've installed ngRoute.-->
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-route.min.js"></script>
+	</script>
+	<script type="text/javascript" src="app.js"></script>
+	<script type='text/javascript' src='./controllers/controller.js'></script> 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+</head>
+<body class="container">
+	<h1 class="page-header">Stock App</h1>
+	
+	 <div ng-controller="StockController">
+
+	 	<div class="row">
+	 		<h3>Seach for company<input type="text" placeholder="Search" ng-model="company"></h3>
+	 		<ul class="list">
+	 			<li ng-repeat="comp in companies|filter:company">
+	 				{{comp.name}} : {{comp.code}} 
+	 				 <button ng-click="get_data(comp.code)">Get {{comp.name}}</button>
+	 			</li>
+	 		</ul>
+	 	</div>
+	 	<div class="row">
+	 		<form>
+	 			<div>
+	 				<label>Company Name</label>
+	 				<input type="text" ng-model="newCompany.name">
+	 			</div>
+	 			<div>
+	 				<label>Company Code</label>
+	 				<input type="text" ng-model="newCompany.code">
+	 			</div>
+	 			<div>
+	 				<input type="submit" ng-click="add_company(newCompany)" class="btn btn-success" value="Add company">
+	 			</div>
+	 		</form>
+	 	</div>
+	 	
+	 	<div>
+ 	 		<table class="table table-bordered">
+ 	 			<thead>
+ 	 				<th>Company Name</th>
+ 	 				<th>Company Code</th>
+ 	 				<th>Source Name</th>
+ 	 				<th>Source Code</th>
+ 	 				<th>Date Range</th>
+ 	 				<th>Stock Price</th>
+ 	 			</thead>
+	 		<tr>
+	 			<td>{{data.name}}</td>
+	 			<td>{{data.code}}</td>
+	 			<td>{{data.source_name}}</td>
+	 			<td>{{data.source_code}}</td> 
+	 			<td>{{data.from_date|date:'MM/dd/yyyy @ h:mma'}} to {{data.to_date|date:'MM/dd/yyyy @ h:mma'}}</td>
+	 			<td>{{data.data[0]}}</td>
+	 		</tr>
+	 		
+	 		
+	 	</table>	
+	 	</div>
+	 </div>
+	 
+	 <div ng-view="">
+	 
+	 </div>
+	</div>
+</body>
+</html>
