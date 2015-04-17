@@ -19,7 +19,7 @@
  // })
 
   var request = require('request');
- var data ={};
+  var data ={};
   var server = app.listen(8000,function() {
     console.log("---------My Server Starting--------");
   });
@@ -28,7 +28,7 @@
 
   var code = req.body.code;
     //-----------------------  API CALL
-   var  url = "https://www.quandl.com/api/v1/datasets/WIKI/"+code+".json?trim_start=2015-01-01&trim_end=2015-01-04auth_token=iYAzczB8oFWC2Z2zpkPw";
+   var  url = "https://www.quandl.com/api/v1/datasets/WIKI/"+code+".json?trim_start=2015-01-01&trim_end=2015-01-04collapse=monthlyauth_token=iYAzczB8oFWC2Z2zpkPw";
 
    request(url, function (error, response, body) {
     if (!error && response.statusCode == 200) {

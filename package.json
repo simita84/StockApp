@@ -8,6 +8,7 @@
     "ejs": "^1.0.0",
     "express": "^4.8.7",
     "express-session": "^1.7.6",
+    "google-finance": "^0.1.4",
     "mongoose": "^4.0.1",
     "socket.io": "latest"
   },
